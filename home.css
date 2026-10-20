@@ -1,0 +1,97 @@
+.dotgothic16-regular {
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    background-color:#143e30;
+    font-family: "DotGothic16", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 25px;
+  position: relative;          /* lets the mobile menu drop down from the header */
+  background-color: #143e30;
+}
+
+header img {
+  width: 70px;
+  height: 70px;
+  flex: 0 0 auto;              /* logo keeps its size */
+}
+
+header nav {
+  flex: 1 1 auto;
+}
+
+
+header ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 18px 20px;
+  background: #f7d283;
+  border: 2px solid #000;
+  border-radius: 25px;
+}
+
+ul li a:hover {
+  background-color: #ffe09e;
+}
+
+header li {
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 1.4rem;
+    font-family: "Arial", sans-serif;
+}
+
+/* hamburger button hidden on desktop */
+.menu-toggle {
+  display: none;
+  background: #f7d283;
+  border: 2px solid #000;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+/* small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;         /* pushes the button to the right edge */
+  }
+
+  header nav {
+    display: none;             /* hidden until toggled */
+    position: absolute;
+    top: 100%;
+    left: 25px;
+    right: 25px;
+    z-index: 10;
+  }
+
+  header nav.open {
+    display: block;
+  }
+
+  header ul {
+    flex-direction: column;    /* stack links vertically */
+    gap: 18px;
+    border-radius: 20px;
+  }
+}
